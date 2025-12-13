@@ -58,7 +58,11 @@
 
         /* Hero Image Overlay Gradient */
         .hero-overlay {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+            background: linear-gradient(to bottom, rgba(71,85,105,0.3), rgba(71,85,105,0.6));
+        }
+
+        .pad-top-200 {
+            padding-top: 200px;
         }
 
         /* Active Link Styling */
@@ -102,8 +106,8 @@
 <body class="bg-stone-50 text-zen-slate font-sans leading-relaxed flex flex-col min-h-screen">
 
     <!-- Navigation -->
-    <header class="bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b border-stone-100 shadow-sm">
-        <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center">
+    <header class="bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b border-stone-100 shadow-sm" id="site-header">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center" id="inner-header">
             <div class="mb-4 md:mb-0">
                 <a href="#home" onclick="showSection('home')" class="text-3xl font-serif text-zen-slate tracking-wide hover:opacity-80 transition">
                     <img class="logo-icon" src="mzp-logo.png" alt="">
@@ -359,14 +363,18 @@
                     <div class="space-y-4">
                         <div class="flex justify-between items-center border-b border-stone-200 pb-2">
                             <div>
-                                <h3 class="font-bold">Breathing Meditation</h3>
+                                <h3 class="font-bold">
+                                    Breathing Meditation
+                                </h3>
                                 <p class="text-sm">Duration: 10-15 min</p>
                             </div>
                             <a href="#" class="text-zen-bronze hover:underline">Try Now</a>
                         </div>
                         <div class="flex justify-between items-center border-b border-stone-200 pb-2">
                             <div>
-                                <h3 class="font-bold">Walking Meditations & Hiking</h3>
+                                <h3 class="font-bold">
+                                    Walking Meditations & Hiking
+                                </h3>
                                 <p class="text-sm">Duration: 20-30 min</p>
                             </div>
                             <a href="#" class="text-zen-bronze hover:underline">Try Now</a>
@@ -794,6 +802,9 @@
     <!-- Scripts -->
     <script>
         function showSection(sectionId) {
+            /**
+             * Show the specified section and hide others
+             */
             // Hide all sections
             const sections = document.querySelectorAll('.page-section');
             sections.forEach(section => {
@@ -802,6 +813,7 @@
 
             // Show target section
             const target = document.getElementById(sectionId);
+            
             if (target) {
                 target.classList.remove('hidden');
                 window.scrollTo(0, 0);
