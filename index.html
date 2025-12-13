@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyZenPage | Mindfulness &amp; Holistic Healing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        zen: {
+                            turquoise: '#056b60', 
+                            teal: '#0F8578',
+                            bronze: '#b73e26',
+                            brown: '#69200f',
+                            slate: '#475569', 
+                            light: '#fafaf9',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Lora', 'serif'],
+                        sans: ['Nunito Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for smoothness */
+        html { scroll-behavior: smooth; }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-icon {
+            display: inline-block;
+            vertical-align: middle;
+            width: 77px;
+            height: 77px;
+            margin-right: 1rem;
+        }
+
+        /* Hero Image Overlay Gradient */
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+        }
+
+        /* Active Link Styling */
+        nav a.active {
+            color: #475569;
+            border-bottom: 2px solid #0F8578;
+        }
+        
+        /* Table Styling */
+        table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        th { text-align: left; padding: 12px; background-color: #f0fdfa; color: #451a03; font-weight: 600; border-bottom: 2px solid #0F8578; }
+        td { padding: 12px; border-bottom: 1px solid #e2e8f0; color: #475569; }
+        tr:hover { background-color: #fafaf9; }
+
+        /* Form Styling */
+        input, select, textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.375rem;
+            margin-bottom: 1rem;
+            font-family: 'Nunito Sans', sans-serif;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #0F8578;
+            ring: 2px solid #0F8578;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #475569;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="bg-stone-50 text-zen-slate font-sans leading-relaxed flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <header class="bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b border-stone-100 shadow-sm">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <a href="#home" onclick="showSection('home')" class="text-3xl font-serif text-zen-slate tracking-wide hover:opacity-80 transition">
+                    <img class="logo-icon" src="mzp-logo.png" alt="">
+                    MyZenPage
+                </a>
+            </div>
+            <nav aria-label="Main navigation">
+                <ul class="flex flex-wrap justify-center gap-6 md:gap-8 text-sm uppercase tracking-widest font-semibold text-zen-slate">
+                    <li><a href="#home" id="nav-home" onclick="showSection('home')" class="hover:text-zen-bronze transition pb-1">Home</a></li>
+                    <li><a href="#programs" id="nav-programs" onclick="showSection('programs')" class="hover:text-zen-bronze transition pb-1">Programs</a></li>
+                    <li><a href="#services" id="nav-services" onclick="showSection('services')" class="hover:text-zen-bronze transition pb-1">Services</a></li>
+                    <li><a href="#pricing" id="nav-pricing" onclick="showSection('pricing')" class="hover:text-zen-bronze transition pb-1">Pricing</a></li>
+                    <li><a href="#workbook" id="nav-workbook" onclick="showSection('workbook')" class="hover:text-zen-bronze transition pb-1">Workbook</a></li>
+                    <li><a href="#info" id="nav-info" onclick="showSection('info')" class="hover:text-zen-bronze transition pb-1">Info</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="flex-grow">
+
+        <!-- ================= HOME SECTION ================= -->
+        <section id="home" class="page-section fade-in">
+            <!-- Hero with Background Image -->
+            <div class="relative w-full h-[60vh] md:h-[70vh] flex items-center justify-center overflow-hidden">
+                <img src="underwater-scene.jpg" alt="Tranquil underwater scene with sunlight filtering through" class="absolute inset-0 w-full h-full object-fit">
+                <div class="absolute inset-0 hero-overlay"></div>
+                <div class="relative z-10 text-center px-4 max-w-4xl mx-auto text-white">
+                    <h1 class="text-4xl md:text-6xl font-serif font-light mb-6 tracking-wide text-zen-light">
+                        Mindfulness for the Modern Day Meditator
+                    </h1>
+                    <p class="text-xl md:text-2xl font-light opacity-90 tracking-wider">
+                        Opening doors to open minds
+                    </p>
+                </div>
+            </div>
+
+            <!-- Home Content -->
+            <div class="max-w-4xl mx-auto px-6 py-16">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <article class="p-6 bg-white rounded-lg shadow-sm border-t-4 border-zen-turquoise hover:shadow-md transition">
+                        <h2 class="text-2xl font-serif text-zen-teal mb-3">Programs</h2>
+                        <p class="mb-4">Explore our ever-changing offerings for personal experiences with more depth and time allocations.</p>
+                        <a href="#programs" onclick="showSection('programs')" class="text-zen-teal hover:text-zen-teal font-semibold underline decoration-zen-turquoise/50 hover:decoration-zen-turquoise">View Programs &rarr;</a>
+                    </article>
+
+                    <article class="p-6 bg-white rounded-lg shadow-sm border-t-4 border-zen-bronze hover:shadow-md transition">
+                        <h2 class="text-2xl font-serif text-zen-bronze mb-3">Services</h2>
+                        <p class="mb-4">Discover our comprehensive meditation and wellness services tailored to your individual journey.</p>
+                        <a href="#services" onclick="showSection('services')" class="text-zen-bronze hover:text-zen-brown font-semibold underline decoration-zen-bronze/50 hover:decoration-zen-bronze">Explore Services &rarr;</a>
+                    </article>
+
+                    <article class="p-6 bg-white rounded-lg shadow-sm border-t-4 border-zen-brown hover:shadow-md transition">
+                        <h2 class="text-2xl font-serif text-zen-brown mb-3">Pricing</h2>
+                        <p class="mb-4">View our transparent pricing options and find the perfect plan that fits your wellness goals.</p>
+                        <a href="#pricing" onclick="showSection('pricing')" class="text-zen-brown hover:text-zen-brown font-semibold underline decoration-zen-brown/50 hover:decoration-zen-brown">See Plans &rarr;</a>
+                    </article>
+
+                    <article class="p-6 bg-white rounded-lg shadow-sm border-t-4 border-zen-slate hover:shadow-md transition">
+                        <h2 class="text-2xl font-serif text-zen-slate mb-3">Workbook</h2>
+                        <p class="mb-4">Access your personal workbook and resources to deepen your mindfulness practice.</p>
+                        <a href="#workbook" onclick="showSection('workbook')" class="text-zen-slate hover:text-zen-slate font-semibold underline decoration-zen-slate/50 hover:decoration-zen-slate">Open Workbook &rarr;</a>
+                    </article>
+                </div>
+
+                <div class="mt-16 text-center border-t border-stone-200 pt-12">
+                    <h3 class="text-3xl font-serif text-zen-teal mb-4">Info</h3>
+                    <p class="text-lg max-w-2xl mx-auto mb-6">Learn more about our vision, benefits, and connect with our dedicated team of wellness professionals.</p>
+                    <a href="#info" onclick="showSection('info')" class="inline-block px-8 py-3 border border-zen-teal text-zen-teal hover:bg-zen-teal hover:text-white transition rounded-full">Read More</a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= PROGRAMS SECTION ================= -->
+        <section id="programs" class="page-section hidden fade-in py-12 md:py-20 bg-stone-50">
+            <div class="max-w-4xl mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-serif text-zen-teal mb-6 text-center">Our Programs</h1>
+                <p class="text-xl text-center text-zen-slate mb-16 italic">Progressive mindfulness paths designed to grow with you from foundation to mastery</p>
+
+                <!-- ODOM -->
+                <div class="mb-16 bg-white p-8 rounded-xl shadow-sm border-l-4 border-zen-turquoise">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                        <div>
+                            <span class="bg-zen-turquoise/10 text-zen-teal px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Level 1 - Foundation</span>
+                            <h2 class="text-3xl font-serif text-zen-teal mt-2" aria-describedby="odom-abbr-expansion">ODOM</h2>
+                            <p class="text-lg text-zen-slate" id="odom-abbr-expansion">Opening Doors to Open Minds</p>
+                        </div>
+                    </div>
+                    <p class="text-lg mb-6">Entry-level mindfulness program focusing on basic breathing techniques, simple meditation, and emotional awareness.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-serif text-zen-teal text-lg mb-2">Program Features</h3>
+                            <ul class="list-disc list-inside space-y-2 text-stone-600">
+                                <li>Basic breathing exercises</li>
+                                <li>Guided meditation (5-10 min)</li>
+                                <li>Emotion recognition</li>
+                                <li>Stress relief basics</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-zen-teal text-lg mb-2">Age Groups</h3>
+                            <ul class="list-none space-y-2 text-stone-600">
+                                <li class="flex items-center"><span class="w-2 h-2 bg-zen-turquoise rounded-full mr-2"></span>6-10 years</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-zen-turquoise rounded-full mr-2"></span>11-17 years</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-zen-turquoise rounded-full mr-2"></span>18-25 years</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-zen-turquoise rounded-full mr-2"></span>Families</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- UNITY -->
+                <div class="mb-16 bg-white p-8 rounded-xl shadow-sm border-l-4 border-zen-bronze">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                        <div>
+                            <span class="bg-zen-bronze/10 text-zen-bronze px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Level 2 - Intermediate</span>
+                            <h2 class="text-3xl font-serif text-zen-bronze mt-2" aria-describedby="unity-abbr-expansion">UNITY</h2>
+                            <p class="text-lg text-zen-slate" id="unity-abbr-expansion">Unified Network Integrated Through Youth</p>
+                        </div>
+                    </div>
+                    <p class="text-lg mb-6">Community-focused program emphasizing group meditation, peer support, and collaborative mindfulness practices.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-serif text-zen-bronze text-lg mb-2">Program Features</h3>
+                            <ul class="list-disc list-inside space-y-2 text-stone-600">
+                                <li>Group meditation sessions</li>
+                                <li>Peer mentorship</li>
+                                <li>Community building</li>
+                                <li>Advanced breathing techniques</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-zen-bronze text-lg mb-2">Age Groups</h3>
+                            <ul class="list-none space-y-2 text-stone-600">
+                                <li class="flex items-center"><span class="w-2 h-2 bg-zen-bronze rounded-full mr-2"></span>11-17 years</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-zen-bronze rounded-full mr-2"></span>18-25 years</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-zen-bronze rounded-full mr-2"></span>Families</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ORSON -->
+                <div class="mb-12 bg-white p-8 rounded-xl shadow-sm border-l-4 border-zen-brown">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                        <div>
+                            <span class="bg-zen-brown/10 text-zen-brown px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide">Level 3 - Advanced</span>
+                            <h2 class="text-3xl font-serif text-zen-brown mt-2" aria-describedby="orson-abbr-expansion">ORSON</h2>
+                            <p class="text-lg text-zen-slate" id="orson-abbr-expansion">Organized Reduction Systems 2 Optimize Nourishments</p>
+                        </div>
+                    </div>
+                    <p class="text-lg mb-6">Comprehensive wellness program integrating mindfulness with nutrition, lifestyle optimization, and holistic health.</p>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-serif text-zen-brown text-lg mb-2">Program Features</h3>
+                            <ul class="list-disc list-inside space-y-2 text-stone-600">
+                                <li>Advanced meditation techniques</li>
+                                <li>Nutrition guidance</li>
+                                <li>Lifestyle coaching</li>
+                                <li>Holistic wellness planning</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="font-serif text-zen-brown text-lg mb-2">Age Groups</h3>
+                            <ul class="list-none space-y-2 text-stone-600">
+                                <li class="flex items-center"><span class="w-2 h-2 bg-zen-brown rounded-full mr-2"></span>18-25 years</li>
+                                <li class="flex items-center"><span class="w-2 h-2 bg-zen-brown rounded-full mr-2"></span>Families</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= SERVICES SECTION ================= -->
+        <section id="services" class="page-section hidden fade-in py-12 md:py-20 bg-stone-50">
+            <div class="max-w-4xl mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-serif text-zen-teal mb-6 text-center">MZP Services</h1>
+                <p class="text-xl text-center text-zen-slate mb-12 max-w-2xl mx-auto">MZP.com provides products and services that focus on individuals interested in developing a foundation for personal growth and wellbeing, through natural and holistic practices.</p>
+
+                <!-- Service Cards -->
+                <div class="grid md:grid-cols-2 gap-6 mb-16">
+                    <!-- Individual -->
+                    <div class="bg-white p-6 rounded shadow-sm border-t-2 border-zen-turquoise">
+                        <h2 class="text-2xl font-serif text-zen-teal mb-2">Individual Meditation</h2>
+                        <p class="text-sm mb-4">One-on-one meditation tailored to your specific needs.</p>
+                        <ul class="text-sm text-stone-600 mb-4">
+                            <li><strong>Duration:</strong> 30-60 minutes</li>
+                            <li><strong>Price:</strong> $15-85</li>
+                        </ul>
+                        <a href="mailto:support@myzenpage.org?subject=Book%20Now%20-%20Service%20Inquiry" class="text-zen-teal font-bold hover:underline">Book Now &rarr;</a>
+                    </div>
+                    <!-- Group -->
+                    <div class="bg-white p-6 rounded shadow-sm border-t-2 border-zen-turquoise">
+                        <h2 class="text-2xl font-serif text-zen-teal mb-2">Group Sessions</h2>
+                        <p class="text-sm mb-4">Community-based meditation practice with peers.</p>
+                        <ul class="text-sm text-stone-600 mb-4">
+                            <li><strong>Duration:</strong> 45-60 min</li>
+                            <li><strong>Price:</strong> Starts at $15</li>
+                        </ul>
+                        <a href="mailto:support@myzenpage.org?subject=Book%20Now%20-%20Service%20Inquiry" class="text-zen-teal font-bold hover:underline">Book Now &rarr;</a>
+                    </div>
+                    <!-- Reiki -->
+                    <div class="bg-white p-6 rounded shadow-sm border-t-2 border-zen-bronze">
+                        <h2 class="text-2xl font-serif text-zen-bronze mb-2">Reiki Healing</h2>
+                        <p class="text-sm mb-4">Energy healing for relaxation and stress reduction.</p>
+                        <ul class="text-sm text-stone-600 mb-4">
+                            <li><strong>Duration:</strong> 60 minutes</li>
+                            <li><strong>Price:</strong> Starting at $35</li>
+                        </ul>
+                        <a href="mailto:support@myzenpage.org?subject=Book%20Now%20-%20Service%20Inquiry" class="text-zen-bronze font-bold hover:underline">Book Now &rarr;</a>
+                    </div>
+                    <!-- Sound Bath -->
+                    <div class="bg-white p-6 rounded shadow-sm border-t-2 border-zen-bronze">
+                        <h2 class="text-2xl font-serif text-zen-bronze mb-2">Sound Bath Therapy</h2>
+                        <p class="text-sm mb-4">Immersive sound healing using singing bowls.</p>
+                        <ul class="text-sm text-stone-600 mb-4">
+                            <li><strong>Duration:</strong> 75 minutes</li>
+                            <li><strong>Price:</strong> Starting at $25</li>
+                        </ul>
+                        <a href="mailto:support@myzenpage.org?subject=Book%20Now%20-%20Service%20Inquiry" class="text-zen-bronze font-bold hover:underline">Book Now &rarr;</a>
+                    </div>
+                    <!-- Audio/Visual -->
+                    <div class="bg-white p-6 rounded shadow-sm border-t-2 border-zen-slate">
+                        <h2 class="text-2xl font-serif text-zen-slate mb-2">Audio/Visual Therapy</h2>
+                        <p class="text-sm mb-4">Light and sound patterns to enhance meditation.</p>
+                        <ul class="text-sm text-stone-600 mb-4">
+                            <li><strong>Duration:</strong> 45 minutes</li>
+                            <li><strong>Price:</strong> $70-95</li>
+                        </ul>
+                        <a href="mailto:support@myzenpage.org?subject=Book%20Now%20-%20Service%20Inquiry" class="text-zen-slate font-bold hover:underline">Book Now &rarr;</a>
+                    </div>
+                    <!-- Family -->
+                    <div class="bg-white p-6 rounded shadow-sm border-t-2 border-zen-slate">
+                        <h2 class="text-2xl font-serif text-zen-slate mb-2">Family Mindfulness</h2>
+                        <p class="text-sm mb-4">Sessions for families to practice together.</p>
+                        <ul class="text-sm text-stone-600 mb-4">
+                            <li><strong>Duration:</strong> 60 minutes</li>
+                            <li><strong>Price:</strong> $105-135</li>
+                        </ul>
+                        <a href="mailto:support@myzenpage.org?subject=Book%20Now%20-%20Service%20Inquiry" class="text-zen-slate font-bold hover:underline">Book Now &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="bg-stone-100 p-8 rounded-lg mb-12">
+                    <h2 class="text-2xl font-serif text-zen-slate mb-4">Walking & Cognitive Studies</h2>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center border-b border-stone-200 pb-2">
+                            <div>
+                                <h3 class="font-bold">Breathing Meditation</h3>
+                                <p class="text-sm">Duration: 10-15 min</p>
+                            </div>
+                            <a href="#" class="text-zen-bronze hover:underline">Try Now</a>
+                        </div>
+                        <div class="flex justify-between items-center border-b border-stone-200 pb-2">
+                            <div>
+                                <h3 class="font-bold">Walking Meditations & Hiking</h3>
+                                <p class="text-sm">Duration: 20-30 min</p>
+                            </div>
+                            <a href="#" class="text-zen-bronze hover:underline">Try Now</a>
+                        </div>
+                        <div class="flex justify-between items-center pb-2">
+                            <div>
+                                <h3 class="font-bold">Cognitive Awareness Studies</h3>
+                                <p class="text-sm">Duration: 15-25 min</p>
+                            </div>
+                            <a href="#" class="text-zen-bronze hover:underline">Try Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics Tables -->
+                <div class="mt-16">
+                    <h2 class="text-3xl font-serif text-zen-brown mb-6">Meditation Growth Analytics</h2>
+                    <div class="overflow-x-auto bg-white rounded-lg shadow-sm">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>US Practitioners</th>
+                                    <th>Global Practitioners</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1990</td><td>7M</td><td>45M</td></tr>
+                                <tr><td>1995</td><td>10.7M</td><td>78M</td></tr>
+                                <tr><td>2000</td><td>16.1M</td><td>125M</td></tr>
+                                <tr><td>2005</td><td>24.1M</td><td>198M</td></tr>
+                                <tr><td>2010</td><td>40.5M</td><td>315M</td></tr>
+                                <tr><td>2015</td><td>61.3M</td><td>485M</td></tr>
+                                <tr><td>2020</td><td>95.5M</td><td>720M</td></tr>
+                                <tr><td>2025</td><td>117.9M</td><td>950M</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-sm text-right text-stone-500 mt-2">*Sources: NHIS, CDC, Global Wellness Institute*</p>
+                </div>
+
+                <div class="mt-16">
+                    <h2 class="text-3xl font-serif text-zen-brown mb-6">Clinical Effectiveness & Benefits</h2>
+                    <div class="overflow-x-auto bg-white rounded-lg shadow-sm">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr>
+                                    <th>Metric</th>
+                                    <th>2018</th>
+                                    <th>2020</th>
+                                    <th>2022</th>
+                                    <th>2024</th>
+                                    <th>Source</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>Stress Reduction</td><td>18%</td><td>35%</td><td>53%</td><td>70%</td><td>APA</td></tr>
+                                <tr><td>Sleep Quality</td><td>15%</td><td>30%</td><td>45%</td><td>60%</td><td>Sleep Fnd</td></tr>
+                                <tr><td>Anxiety Reduction</td><td>20%</td><td>40%</td><td>60%</td><td>80%</td><td>JCP</td></tr>
+                                <tr><td>Focus</td><td>20%</td><td>40%</td><td>60%</td><td>80%</td><td>Cog Sci</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 text-center">
+                    <div class="p-4 bg-zen-teal text-white rounded">
+                        <div class="text-3xl font-bold">73%</div>
+                        <div class="text-xs">Improved Focus</div>
+                    </div>
+                    <div class="p-4 bg-zen-bronze text-white rounded">
+                        <div class="text-3xl font-bold">18m</div>
+                        <div class="text-xs">Avg Daily Practice</div>
+                    </div>
+                    <div class="p-4 bg-zen-brown text-white rounded">
+                        <div class="text-3xl font-bold">89%</div>
+                        <div class="text-xs">Reduced Anxiety</div>
+                    </div>
+                    <div class="p-4 bg-zen-slate text-white rounded">
+                        <div class="text-3xl font-bold">94%</div>
+                        <div class="text-xs">Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= PRICING SECTION ================= -->
+        <section id="pricing" class="page-section hidden fade-in py-12 md:py-20 bg-stone-50">
+            <div class="max-w-4xl mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-serif text-zen-teal mb-6 text-center">MZP Pricing</h1>
+                <p class="text-xl text-center text-zen-slate mb-12">Experience the tranquility of water meditation and mindful awareness.</p>
+
+                <!-- Core Philosophy Summary -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-16 text-sm">
+                    <div class="bg-white p-4 rounded shadow-sm">
+                        <h2 class="font-bold text-zen-teal mb-2">Meditation</h2>
+                        <p>Traditional and modern mindfulness techniques designed to fit your routine.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm">
+                        <h2 class="font-bold text-zen-bronze mb-2">Exercise</h2>
+                        <p>Gentle Tai Chi, yoga flows, and mindful walking practices.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm">
+                        <h2 class="font-bold text-zen-brown mb-2">Diet</h2>
+                        <p>Mindful nutrition approach emphasizing whole foods and intuitive eating.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow-sm">
+                        <h2 class="font-bold text-zen-slate mb-2">Systems</h2>
+                        <p>Structured frameworks for daily practice and progress tracking.</p>
+                    </div>
+                </div>
+
+                <!-- Pricing Cards -->
+                <div class="grid md:grid-cols-3 gap-8 mb-12">
+                    
+                    <!-- ODOM -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col border border-stone-200">
+                        <div class="p-6 bg-stone-100 border-b border-stone-200">
+                            <h2 class="text-2xl font-serif text-zen-teal">ODOM</h2>
+                            <p class="text-sm text-zen-slate mb-4">Foundation</p>
+                            <div class="text-4xl font-bold text-zen-teal">$49<span class="text-base font-normal text-stone-500">/mo</span></div>
+                            <p class="text-xs text-stone-500 mt-2">Q: $129 | Y: $449</p>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <ul class="space-y-3 text-sm text-stone-600">
+                                <li class="flex items-start"><span class="mr-2 text-zen-teal">✓</span> Basic meditation techniques</li>
+                                <li class="flex items-start"><span class="mr-2 text-zen-teal">✓</span> 4 group sessions/mo</li>
+                                <li class="flex items-start"><span class="mr-2 text-zen-teal">✓</span> Mobile app access</li>
+                                <li class="flex items-start"><span class="mr-2 text-zen-teal">✓</span> Progress tracking</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 bg-stone-50 border-t border-stone-100">
+                            <a href="mailto:support@myzenpage.org?subject=Mindful%20Journey%20Guide%20Request" class="block w-full py-2 bg-zen-teal text-white border border-zen-teal font-bold text-center rounded hover:bg-zen-teal hover:text-white transition">Book ODOM</a>
+                        </div>
+                    </div>
+
+                    <!-- UNITY -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transform md:-translate-y-4 border-2 border-zen-bronze relative">
+                        <div class="absolute top-0 right-0 bg-zen-bronze text-white text-xs px-2 py-1 uppercase font-bold">Popular</div>
+                        <div class="p-6 bg-orange-50 border-b border-orange-100">
+                            <h2 class="text-2xl font-serif text-zen-bronze">UNITY</h2>
+                            <p class="text-sm text-zen-slate mb-4">Intermediate</p>
+                            <div class="text-4xl font-bold text-zen-bronze">$79<span class="text-base font-normal text-stone-500">/mo</span></div>
+                            <p class="text-xs text-stone-500 mt-2">Q: $209 | Y: $729</p>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <ul class="space-y-3 text-sm text-stone-600">
+                                <li class="flex items-start"><span class="mr-2 text-zen-bronze">✓</span> All ODOM features</li>
+                                <li class="flex items-start"><span class="mr-2 text-zen-bronze">✓</span> 8 group sessions/mo</li>
+                                <li class="flex items-start"><span class="mr-2 text-zen-bronze">✓</span> 2 individual sessions/mo</li>
+                                <li class="flex items-start"><span class="mr-2 text-zen-bronze">✓</span> Peer mentorship</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 bg-stone-50 border-t border-stone-100">
+                            <a href="mailto:support@myzenpage.org?subject=Mindful%20Journey%20Guide%20Request" class="block w-full py-2 bg-zen-bronze text-white font-bold text-center rounded hover:bg-zen-brown transition">Book UNITY</a>
+                        </div>
+                    </div>
+
+                    <!-- ORSON -->
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden flex flex-col border border-stone-200">
+                        <div class="p-6 bg-stone-100 border-b border-stone-200">
+                            <h2 class="text-2xl font-serif text-zen-brown">ORSON</h2>
+                            <p class="text-sm text-zen-slate mb-4">Advanced</p>
+                            <div class="text-4xl font-bold text-zen-brown">$119<span class="text-base font-normal text-stone-500">/mo</span></div>
+                            <p class="text-xs text-stone-500 mt-2">Q: $319 | Y: $1099</p>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <ul class="space-y-3 text-sm text-stone-600">
+                                <li class="flex items-start"><span class="mr-2 text-zen-brown">✓</span> All UNITY features</li>
+                                <li class="flex items-start"><span class="mr-2 text-zen-brown">✓</span> Unlimited group sessions</li>
+                                <li class="flex items-start"><span class="mr-2 text-zen-brown">✓</span> 4 individual sessions/mo</li>
+                                <li class="flex items-start"><span class="mr-2 text-zen-brown">✓</span> Nutrition & Lifestyle Coach</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 bg-stone-50 border-t border-stone-100">
+                            <a href="mailto:support@myzenpage.org?subject=Mindful%20Journey%20Guide%20Request" class="block w-full py-2 bg-white border border-zen-brown bg-zen-brown text-white font-bold text-center rounded hover:bg-zen-brown hover:text-white transition">Book ORSON</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center bg-white p-8 rounded-lg shadow-sm">
+                    <h2 class="text-xl font-serif text-zen-brown mb-2">Need Something Different?</h2>
+                    <p class="mb-4">We offer custom packages and family plans.</p>
+                    <div class="space-x-4">
+                        <a href="mailto:support@myzenpage.org?subject=Family%20Plans" class="text-zen-teal underline font-semibold">Contact for Family Plans</a>
+                        <a href="mailto:support@myzenpage.org?subject=Corporate%20Packages" class="text-zen-teal underline font-semibold">Corporate Packages</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= WORKBOOK SECTION ================= -->
+        <section id="workbook" class="page-section hidden fade-in py-12 md:py-20 bg-stone-50">
+            <div class="max-w-3xl mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-serif text-zen-teal mb-6 text-center">MZP Workbook</h1>
+                <p class="text-lg text-zen-slate mb-12 text-center">We're honored to help you begin your personalized MZP journey. This is where your clarity begins.</p>
+
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h2 class="text-2xl font-serif text-zen-brown mb-6 border-b pb-4">Personal Information Form</h2>
+                    <p class="text-sm italic mb-6 text-stone-500">All information is confidential and used only to enhance your experience</p>
+                    
+                    <form onsubmit="event.preventDefault(); alert('Thank you! Your workbook information has been saved locally.');">
+                        <div class="mb-6">
+                            <h3 class="font-bold text-zen-brown mb-4">Contact Details</h3>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="contact-fname">First Name *</label>
+                                    <input id="contact-fname" type="text" required>
+                                </div>
+                                <div>
+                                    <label for="contact-lname">Last Name *</label>
+                                    <input id="contact-lname" type="text" required>
+                                </div>
+                            </div>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="contact-email">Email Address *</label>
+                                    <input id="contact-email" type="email" required>
+                                </div>
+                                <div>
+                                    <label for="contact-phone">Phone Number</label>
+                                    <input id="contact-phone" type="tel">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <fieldset>
+                                <legend>
+                                    <h3 class="font-bold text-zen-brown mb-4">Address</h3>
+                                </legend>
+                                <label>Street Address *
+                                    <input type="text" placeholder="Street Address">
+                                </label>
+                                <div class="grid md:grid-cols-3 gap-4">
+                                    <label>
+                                        City *
+                                        <input type="text" placeholder="City">
+                                    </label>
+                                    <label>
+                                        State
+                                        <input type="text" placeholder="State">
+                                    </label>
+                                    <label>
+                                        Postal Code *
+                                    <input type="text" placeholder="Zip Code *"></label>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="font-bold text-zen-brown mb-4">Demographics</h3>
+                            <label>Age Group *</label>
+                            <select>
+                                <option>Select...</option>
+                                <option>6-10 years</option>
+                                <option>11-17 years</option>
+                                <option>18-25 years</option>
+                                <option>26-49 years</option>
+                                <option>50+ years</option>
+                                <option>Special group/family</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-6">
+                            <h3 class="font-bold text-zen-brown mb-4">Your Mindfulness Journey</h3>
+                            <label>What are your mindfulness goals?</label>
+                            <textarea rows="3" placeholder="Tell us what you hope to achieve..."></textarea>
+                            
+                            <label>Previous experience</label>
+                            <textarea rows="3" placeholder="Describe any previous experience..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-zen-brown text-white font-bold py-3 rounded hover:bg-brown-600 transition shadow-lg">Submit Information</button>
+                    </form>
+                </div>
+
+                <div class="mt-12 bg-zen-brown text-white p-8 rounded-xl shadow-md">
+                    <h2 class="text-2xl font-serif mb-4">Join the MZP Mailing List</h2>
+                    <p class="mb-6 opacity-90">If you would like to sign up for the monthly MZP mailer please provide us with your basic contact information.</p>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="First Name *" class="text-stone-800">
+                        <input type="text" placeholder="Last Name *" class="text-stone-800">
+                        <input type="email" placeholder="Email Address *" class="text-stone-800">
+                        <button type="button" onclick="alert('Subscribed!')" class="w-full bg-white text-zen-brown font-bold py-3 rounded hover:bg-stone-100 transition">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ================= INFO SECTION ================= -->
+        <section id="info" class="page-section hidden fade-in py-12 md:py-20 bg-stone-50">
+            <div class="max-w-4xl mx-auto px-6">
+                <h1 class="text-4xl md:text-5xl font-serif text-zen-teal mb-6 text-center">Research That Proves It Works!</h1>
+                <p class="text-xl text-center text-zen-slate mb-12">Meditation isn't just relaxation. It's backed by extensive research showing real improvements in mental and physical health.</p>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm mb-12">
+                    <h2 class="text-2xl font-serif text-zen-teal mb-4">Clinical Benefits Snapshot</h2>
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full">
+                            <thead>
+                                <tr>
+                                    <th>Benefit</th>
+                                    <th>How it Works</th>
+                                    <th>Result</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="font-bold">Reduce Stress & Anxiety</td>
+                                    <td>Lowers cortisol levels</td>
+                                    <td class="text-zen-teal font-bold">73% reduction</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">Better Sleep</td>
+                                    <td>Establishes healthy patterns</td>
+                                    <td class="text-zen-teal font-bold">Better sleep in 2 wks</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">Heart Health</td>
+                                    <td>Lowers blood pressure</td>
+                                    <td class="text-zen-teal font-bold">20% lower BP</td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold">Panic Attack Relief</td>
+                                    <td>Grounding exercises</td>
+                                    <td class="text-zen-teal font-bold">85% success rate</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-12 mb-16">
+                    <div>
+                        <h2 class="text-3xl font-serif text-zen-bronze mb-4">Why Choose MZP?</h2>
+                        <p class="mb-4 text-lg">Virtually World Wide, in person locally in NoVa DMV area. Your body already knows how to meditate - we just help you discover these natural abilities.</p>
+                        <p class="font-bold text-zen-bronze italic text-lg">No Religion. No Extensive Training. Just Natural Healing.</p>
+                        
+                        <div class="mt-8">
+                            <h3 class="font-bold text-zen-teal mb-2">MZP Benefits</h3>
+                            <ul class="space-y-2">
+                                <li>✨ FREE First Session + Orientation</li>
+                                <li>🎓 Learn Fun and Easy for All Ages</li>
+                                <li>🧘‍♀️ Natural, Non-Religious Approach</li>
+                                <li>🎯 Personalized Experience</li>
+                                <li>☮️ Peace-Focused Community</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-stone-800 text-stone-200 p-8 rounded-lg">
+                        <h2 class="text-2xl font-serif text-white mb-6">Get In Touch</h2>
+                        <div class="space-y-4">
+                            <p class="flex items-center"><span class="mr-3">📧</span> support@myzenpage.org</p>
+                            <p class="flex items-center"><span class="mr-3">📧</span> admin@MYZENPAGE.org</p>
+                            <p class="flex items-center"><span class="mr-3">📍</span> Manassas, Virginia</p>
+                            <p class="flex items-center"><span class="mr-3">📞</span> 703-330-1867</p>
+                        </div>
+                        <div class="mt-8 pt-8 border-t border-stone-700">
+                            <h3 class="text-lg font-bold text-white mb-2">Training Opportunities</h3>
+                            <p class="text-sm mb-4">Join our growing team of mindfulness instructors and wellness professionals.</p>
+                            <a href="mailto:support@myzenpage.org" class="text-zen-light hover:text-white transition underline">Request Training Info</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info Registration Form -->
+                <div class="bg-white p-8 rounded-lg shadow-sm border border-stone-200">
+                    <h2 class="text-2xl font-serif text-zen-bronze mb-2">Information & Registration</h2>
+                    <p class="text-sm text-stone-500 mb-6">Thank you for visiting us. We look forward to meeting you.</p>
+                    <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <input type="text" placeholder="First Name *">
+                        <input type="text" placeholder="Last Name *">
+                        <input type="email" placeholder="Email Address *" class="md:col-span-2">
+                        <input type="tel" placeholder="Phone Number">
+                        <input type="number" placeholder="Age">
+                        <select class="md:col-span-2">
+                            <option>Experience Level...</option>
+                            <option>Beginner</option>
+                            <option>Intermediate</option>
+                            <option>Advanced</option>
+                        </select>
+                        <textarea rows="3" placeholder="What are your wellness goals?" class="md:col-span-2"></textarea>
+                        <button type="button" onclick="alert('Message Sent!')" class="md:col-span-2 bg-zen-bronze text-white font-bold py-3 rounded hover:bg-amber-800 transition">Contact Our Team</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-stone-900 text-stone-400 py-12 mt-auto">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+            <div>
+                <h2 class="text-2xl font-serif text-white mb-4">MyZenPage</h2>
+                <p class="mb-4">Mindfulness company rooted in Historic Manassas, Virginia.</p>
+                <p class="text-xl">Peace 🕊️</p>
+            </div>
+            <div>
+                <h3 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Quick Links</h3>
+                <nav aria-label="Quick links">
+                    <ul class="space-y-2">
+                        <li><a href="#programs" onclick="showSection('programs')" class="hover:text-zen-turquoise transition">Programs</a></li>
+                        <li><a href="#services" onclick="showSection('services')" class="hover:text-zen-turquoise transition">Services</a></li>
+                        <li><a href="#pricing" onclick="showSection('pricing')" class="hover:text-zen-turquoise transition">Pricing</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <h3 class="text-white font-bold mb-4 uppercase tracking-wider text-sm">Contact</h3>
+                <p>Historic Manassas, Virginia</p>
+                <p>support@myzenpage.org</p>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto px-6 mt-12 pt-8 border-t border-stone-800 text-sm text-center">
+            &copy; 2026 MyZenPage. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Show target section
+            const target = document.getElementById(sectionId);
+            if (target) {
+                target.classList.remove('hidden');
+                window.scrollTo(0, 0);
+            }
+
+            // Update Active Nav Link
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => link.classList.remove('active'));
+            
+            const activeLink = document.getElementById('nav-' + sectionId);
+            if(activeLink) activeLink.classList.add('active');
+
+            // Optionally update URL hash without scrolling
+            history.pushState(null, null, '#' + sectionId);
+        }
+
+        // Initialize based on URL hash or default to home
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.substring(1);
+            if (hash && document.getElementById(hash)) {
+                showSection(hash);
+            } else {
+                showSection('home');
+            }
+        });
+    </script>
+</body>
+</html>
